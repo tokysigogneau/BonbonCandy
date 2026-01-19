@@ -24,9 +24,38 @@ header a:hover {
 .welcome_text {
     width: 60%;
     margin: auto;
+}
 
-
-
+/* PARTIE CHOIX AFFICHAGE */
+.type_affichage {
+    width: 90%;
+    margin: auto;
+    border-top: solid 0.1px ;
+    border-bottom: solid 0.1px ;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
 
 }
 
+.type_affichage img {
+    padding: 10px;
+}
+
+/* PARTI CATEGORIE */
+.categorie {
+    width: 300px;
+}
+.categorie button {
+    display: flex;
+    justify-content: space-between;
+    width: 270px;
+}
+.recherche_categorie {
+    width: 270px;
+    box-sizing: border-box;
+
+}
