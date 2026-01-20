@@ -19,6 +19,31 @@ header a {
 header a:hover {
     text-decoration: underline;
 }
+/* PARTIE CART/PANIER */
+.offcanvas-body, .offcanvas-header {
+    background-color: rgb(200, 164, 233);
+}
+.cart_card {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px blue solid;
+}
+
+.add_more_product {
+    display: flex;
+}
+.add_more_product button {
+    border-radius: 25px;
+    width: 35px;
+    height: 35px;
+}
+.add_more_product button:hover {
+    background-color: rgb(175, 177, 179);
+}
+
+
+
 
 /* PARTIE WELCOME TEXT */
 .welcome_text {
