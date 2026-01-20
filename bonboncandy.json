@@ -34,17 +34,17 @@
     "boissons" : 
     [
         {
-        "name": "Boisson KAS",
-        "img": "sucette_rouge.jpg",
+        "name": "KAS",
+        "img": "boisson_kas.jpg",
         "score": "4",
-        "price": "19,99",
+        "price": "2",
         "description": "Sweet sweet blue candy"
         },
         {
         "name": "Monster energy",
-        "img": "sucette_rouge.jpg",
+        "img": "boisson_monster.jpg",
         "score": "4",
-        "price": "19,99",
+        "price": "2",
         "description": "Sweet sweet blue candy"
         }
     ]
