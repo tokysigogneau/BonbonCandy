@@ -9,7 +9,6 @@ async function chargerCards() {
     card.classList.add('card');
 
     card.innerHTML = `
-      toto
       <img src="img/${bonbon.img}" alt="${bonbon.name}">
       <h4>${bonbon.name}</h4>
       <h4>${'⭐'.repeat(bonbon.score)}</h4>

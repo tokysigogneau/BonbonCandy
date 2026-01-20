@@ -74,11 +74,12 @@ header a:hover {
     margin: 30px;
     margin-top: 100px;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
 }
 
 .card {
-    width: 150px;
+    width: 70%;
     margin: 10px;
     padding: 10px;
     background-color: rgb(214, 205, 218);
@@ -93,14 +94,19 @@ header a:hover {
 }
 
 .card button {
-    background-color: rgb(241, 108, 219);
+    background-color: rgb(180, 76, 163);
     padding: 7px;
     width: 100%;
     border-radius: 25px;
-    border-style: none;
+    border: 1px rgb(180, 76, 163) solid;
     color: white;
     margin-top: 10px;
 
+}
+
+.card button:hover {
+    background-color: rgb(228, 131, 215);
+    border: 1px rgb(180, 76, 163) solid;
 }
 
 .card .prix {
