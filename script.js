@@ -1,18 +1,18 @@
-async function chargerCards() {
+async function chargerCards(choice) {
   const response = await fetch('bonboncandy.json');
   const data = await response.json();
 
   const container = document.getElementById('produit');
 
-  data.bonbons.forEach(bonbon => {
+  data.bonbons.forEach(choice => {
     const card = document.createElement('div');
     card.classList.add('card');
 
     card.innerHTML = `
-      <img src="img/${bonbon.img}" alt="${bonbon.name}">
-      <h4>${bonbon.name}</h4>
-      <h4>${'⭐'.repeat(bonbon.score)}</h4>
-      <div class="prix">${bonbon.price} €</div>
+      <img src="img/${choice.img}" alt="${choice.name}">
+      <h4>${choice.name}</h4>
+      <h4>${'⭐'.repeat(choice.score)}</h4>
+      <div class="prix">${choice.price} €</div>
       <button>Ajouter au panier</button>
     `;
 
@@ -20,4 +20,7 @@ async function chargerCards() {
   });
 }
 
-chargerCards();
+chargerCards("bonbon");
+
+
+// ,rkky
