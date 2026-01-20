@@ -24,6 +24,9 @@ header a:hover {
     background-color: rgb(200, 164, 233);
 }
 .cart_card {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 25px;
     height: 150px;
     display: flex;
     justify-content: space-between;
@@ -31,6 +34,7 @@ header a:hover {
 }
 
 .add_more_product {
+    padding-left: 10px;
     display: flex;
 }
 .add_more_product button {
@@ -41,6 +45,47 @@ header a:hover {
 .add_more_product button:hover {
     background-color: rgb(175, 177, 179);
 }
+
+.cart_card_img{
+    display: flex;
+    width: 120px;
+    margin: 5px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.cart_card_img img {
+    margin: auto;
+}
+.cart_card_2nd_part{
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.cart_card_2nd_part p {
+    padding: 5px 10px 5px 10px;
+}
+
+.cart_card_3rd_part {
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cart_card_3rd_part button{
+    width: 11px;
+    padding-left: 50px;
+    border: none;
+    background-color: aliceblue ;
+}
+.cart_card_3rd_part button:hover {
+    border-bottom: 1px solid black;
+    padding-left: 50px;
+    right: 0;
+}
+
 
 
 
