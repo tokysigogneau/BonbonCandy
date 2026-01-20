@@ -17,9 +17,12 @@ async function chargerCards(categories) {
 
       card.innerHTML = `
         <img src="img/${choice.img}" alt="${choice.name}">
+        <div class="card_info">
         <h4>${choice.name}</h4>
         <h4>${'⭐'.repeat(choice.score)}</h4>
         <div class="prix">${choice.price} €</div>
+        </div>
+
         <button>Ajouter au panier</button>
       `;
 
