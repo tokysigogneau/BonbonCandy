@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Nos Produits</title>
 </head>
 <body>
@@ -18,7 +19,46 @@
         </div>
         <div class="panier_compte">
             <img src="img/user.png" alt="" width="30">
-            <img src="img/shopping-cart.png" alt="" width="30">
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  <img src="img/shopping-cart.png" width="30" alt="">
+</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+        <div class="cart_card">
+            <img src="img/boisson_kas.jpg" height="70px" alt=""> <!-- left -->
+
+            <div class="cart_card_2nd_part"> <!-- middle -->
+                <a href="link-to-article">Boisson KAS</a>
+                <div class="add_more_product">
+                    <button>-</button>
+                    <p>1</p>
+                    <button>+</button>
+                </div>
+            </div>
+
+            <div class="cart_card_3rd_part">
+                <button><img src="img/poubelle.png" width="10px" alt=""></button>
+
+                <h4 class="cart_product_price"> 19.99 €</h4>
+            </div>
+
+
+            
+        </div>
+
+    </div>
+  </div>
+</div>
         </div>
     </header>
 
@@ -135,5 +175,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
