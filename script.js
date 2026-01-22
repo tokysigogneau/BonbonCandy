@@ -1,5 +1,6 @@
 //creation of the cart array / link to the local storage
 let user_cart = JSON.parse(localStorage.getItem('user_cart')) || [];
+const selections = ["boissons", "bonbons",  "sales", "sucres"];
 
 //Get the data from Json file, function because we are going to use this multiple times
 async function fetchData() {
@@ -153,7 +154,41 @@ function emptyCart() {
   chargerCartCards();
 }
 
+
+// Function to display the choosen category only
+
+function categorySelection(){
+  // ids : categorie_boisson /  categorie_bonbons / categorie_sales / categorie_sucre
+  const checkboxBoisson = document.getElementById("categorie_boisson");
+  const checkboxBonbons = document.getElementById("categorie_bonbons");
+  const checkboxsSales = document.getElementById("categorie_sales");
+  const checkboxSucres = document.getElementById("categorie_sucres");
+
+  //check is any of the checkboxes has been selected then empty the default list
+  if (checkboxBoisson.checked == true || checkboxBonbons.checked == true 
+      || checkboxsSales.checked == true || checkboxSucres.checked == true){
+        selections = [];
+
+        if (checkboxBoisson.checked == true){
+          selections.push("boisson")
+        }
+        if (checkboxBonbons.checked == true){
+          selections.push("bonbons")
+        }
+        if (checkboxsSales.checked == true){
+          selections.push("sales")
+        }
+        if (checkboxSucres.checked == true){
+          selections.push("sucres")
+        }
+
+
+  } else{
+
+  }
+}
+
 // ---------- INITIALISATION ----------
-const selections = ["bonbons", "boissons"];
+categorySelection();
 chargerCards(selections);
 chargerCartCards();
