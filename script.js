@@ -1,6 +1,6 @@
 //creation of the cart array / link to the local storage
 let user_cart = JSON.parse(localStorage.getItem('user_cart')) || [];
-const selections = ["boissons", "bonbons",  "sales", "sucres"];
+const selections = ["boissons", "bonbons",  "snacks_sales", "snacks_sucres"];
 
 //Get the data from Json file, function because we are going to use this multiple times
 async function fetchData() {
@@ -170,6 +170,7 @@ function categorySelection() {
   const checkboxSales   = document.getElementById('categorie_sales');
   const checkboxSucres  = document.getElementById('categorie_sucres');
 
+  //select each class element to hide/show them
   const cardBoissons = document.querySelectorAll('.card_boissons');
   const cardBonbons = document.querySelectorAll('.card_bonbons');
   const cardSales = document.querySelectorAll('.card_sales');
@@ -217,21 +218,11 @@ function categorySelection() {
       cardSucres.forEach(card => card.style.display = "block");
 
     } else { 
-      cardSucres.forEach(card => card.style.display = "block");
+      cardSucres.forEach(card => card.style.display = "none");
     }
 
   }
 }
-
-
-
-// function toggleDisplayCategory(selector) {
-//   const cards = document.querySelectorAll(selector);
-
-//   cards.forEach(card => {
-//     card.style.display = (card.style.display === "none") ? "block" : "none";
-//   });
-// }
 
 function hideAllProduct(){
   const allCards = document.querySelectorAll('.card')

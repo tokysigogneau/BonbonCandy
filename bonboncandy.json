@@ -47,6 +47,26 @@
         "price": "2",
         "description": "Sweet sweet blue candy"
         }
+    ], 
+    "snacks_sales" : 
+    [
+        {
+        "name": "BEST CHIPS EVAAAHH ",
+        "img": "best_chips.png",
+        "score": "10",
+        "price": "2",
+        "description": "The taste of happiness"
+        }
+    ],
+    "snacks_sucres" : 
+    [
+        {
+        "name": "Muddy Bites ",
+        "img": "muddy_bites.jpg",
+        "score": "5",
+        "price": "5.99",
+        "description": "Chocolate part of the ice cream cone"
+        }
     ]
 }
 
