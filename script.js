@@ -1,6 +1,6 @@
 //creation of the cart array / link to the local storage
 let user_cart = JSON.parse(localStorage.getItem('user_cart')) || [];
-const selections = ["boissons", "bonbons",  "snacks_sales", "snacks_sucres"];
+const selections = ["boissons", "bonbons",  "sales", "sucres"];
 
 //Get the data from Json file, function because we are going to use this multiple times
 async function fetchData() {
@@ -222,13 +222,26 @@ function categorySelection() {
     }
 
   }
+  else { //if no category are selected, we display everything
+    showAllProduct()
+
+  }
+}
+
+
+function showAllProduct(){
+  const allCards = document.querySelectorAll('.card')
+
+    allCards.forEach(card => {
+      card.style.display = "block";
+  });
 }
 
 function hideAllProduct(){
   const allCards = document.querySelectorAll('.card')
 
     allCards.forEach(card => {
-      card.style.display === "none";
+      card.style.display = "none";
   });
 
 }

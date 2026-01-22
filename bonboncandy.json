@@ -48,7 +48,7 @@
         "description": "Sweet sweet blue candy"
         }
     ], 
-    "snacks_sales" : 
+    "sales" : 
     [
         {
         "name": "BEST CHIPS EVAAAHH ",
@@ -58,7 +58,7 @@
         "description": "The taste of happiness"
         }
     ],
-    "snacks_sucres" : 
+    "sucres" : 
     [
         {
         "name": "Muddy Bites ",
