@@ -98,18 +98,18 @@
             <input class="recherche_categorie" type="text" placeholder=" &#128269; Rechercher" name="Rechercher">
 
 
-            <button type="button" > 
+            <button type="button"  > 
                 <div>
-                    <input type="checkbox" name="Boissons" value="Boissons" id="categorie_boisson">
+                    <input type="checkbox" name="Boissons" value="Boissons" id="categorie_boissons" onclick="categorySelection()">
                     <label for="Boissons"> Boissons</label>
                 </div>
 
                 <div class="item_stock">(19)</div>
             </button>
 
-            <button type="button" > 
+            <button type="button"  > 
                 <div>
-                    <input type="checkbox" name="Bonbons" value="Bonbons" id="categorie_bonbons">
+                    <input type="checkbox" name="Bonbons" value="Bonbons" id="categorie_bonbons" onclick="categorySelection()" >
                 <label for="Bonbons"> Bonbons</label>
                 </div>
                 
@@ -117,18 +117,19 @@
                 <div class="item_stock">(19)</div>
             </button>
 
-            <button type="button" > 
+            <button type="button"  > 
                 <div>
-                    <input type="checkbox" name="Snacks salés" value="Snacks salés" id="categorie_sales">
+                    <input type="checkbox" name="Snacks salés" value="Snacks salés" id="categorie_sales" onclick="categorySelection()">
                    <label for="Snacks salés"> Snacks salés</label>
                 </div>
 
                 <div class="item_stock">(19)</div>
             </button>
 
-            <button type="button" > 
+            <button type="button"  > 
                 <div>
-                    <input type="checkbox" name="Snacks sucrés" value="Snacks sucrés" id="categorie_sucre">
+                    <input type="checkbox" name="Snacks sucrés" value="Snacks sucrés" id="categorie_sucres"
+                    onclick="categorySelection()" >
                 <label for="Snacks sucrés"> Snacks sucrés</label>
                 </div>
                 
@@ -139,7 +140,7 @@
         </div>
 
         <div class="produit" id="produit">
-            <div class="card">
+            <!-- <div class="card">
                 <img src="img/candy_product.jpg" alt="" >
                 <h4>Bonbon 1</h4>
                 <h4>⭐⭐⭐⭐⭐</h4>
@@ -182,14 +183,15 @@
                 <div class="prix">19,99 €</div>
                 <button>Ajouter au panier</button>
 
-            </div>
+            </div> -->
 
 
 
         </div>
     </div>
 
-    <script src="script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

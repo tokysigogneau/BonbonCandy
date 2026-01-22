@@ -32,17 +32,22 @@ async function chargerCards(categories) {
     if (!data[categorie]) return;
 
     data[categorie].forEach(choice => {
+
+
+      //Finish hereeeeeeeeeeeeeee
       const card = document.createElement('div');
-      card.classList.add('card');
+      card.className = `card_${categorie} card`;
+      card.id= `id_${choice.name}`;
 
       card.innerHTML = `
-        <img src="img/${choice.img}" alt="${choice.name}">
-        <div class="card_info">
-          <h4>${choice.name}</h4>
-          <h4>${'⭐'.repeat(Number(choice.score))}</h4>
-          <div class="prix">${choice.price} €</div>
-        </div>
-        <button onclick="addToCart('${choice.name}')">Ajouter au panier</button>
+            <img src="img/${choice.img}" alt="${choice.name}">
+            <div class="card_info">
+            <h4>${choice.name}</h4>
+            <h4>${'⭐'.repeat(Number(choice.score))}</h4>
+            <div class="prix">${choice.price} €</div>
+          </div>
+          <button onclick="addToCart('${choice.name}')">Ajouter au panier</button>
+
       `;
 
       container.appendChild(card);
@@ -155,40 +160,93 @@ function emptyCart() {
 }
 
 
-// Function to display the choosen category only
+// Function to display the choosen category only from checkboxes
 
-function categorySelection(){
-  // ids : categorie_boisson /  categorie_bonbons / categorie_sales / categorie_sucre
-  const checkboxBoisson = document.getElementById("categorie_boisson");
-  const checkboxBonbons = document.getElementById("categorie_bonbons");
-  const checkboxsSales = document.getElementById("categorie_sales");
-  const checkboxSucres = document.getElementById("categorie_sucres");
+function categorySelection() {
 
-  //check is any of the checkboxes has been selected then empty the default list
-  if (checkboxBoisson.checked == true || checkboxBonbons.checked == true 
-      || checkboxsSales.checked == true || checkboxSucres.checked == true){
-        selections = [];
+  //these are the category choices
+  const checkboxBoissons = document.getElementById('categorie_boissons');
+  const checkboxBonbons = document.getElementById('categorie_bonbons');
+  const checkboxSales   = document.getElementById('categorie_sales');
+  const checkboxSucres  = document.getElementById('categorie_sucres');
 
-        if (checkboxBoisson.checked == true){
-          selections.push("boisson")
-        }
-        if (checkboxBonbons.checked == true){
-          selections.push("bonbons")
-        }
-        if (checkboxsSales.checked == true){
-          selections.push("sales")
-        }
-        if (checkboxSucres.checked == true){
-          selections.push("sucres")
-        }
+  const cardBoissons = document.querySelectorAll('.card_boissons');
+  const cardBonbons = document.querySelectorAll('.card_bonbons');
+  const cardSales = document.querySelectorAll('.card_sales');
+  const cardSucres = document.querySelectorAll('.card_sucres');
+
+  const isBoissons = checkboxBoissons?.checked;
+  const isBonbons = checkboxBonbons?.checked;
+  const isSales   = checkboxSales?.checked;
+  const isSucres  = checkboxSucres?.checked;
+
+  if (isBoissons || isBonbons || isSales || isSucres) {
+    hideAllProduct()
+
+    //check each category if they are checked or not
+
+    //boissons
+    if (isBoissons) {
+    cardBoissons.forEach(card => card.style.display = "block");
 
 
-  } else{
+    } else { 
+    cardBoissons.forEach(card => card.style.display = "none");
+
+    }
+
+    //bonbons
+    if (isBonbons) {
+      cardBonbons.forEach(card => card.style.display = "block");
+
+
+    } else { 
+      cardBonbons.forEach(card => card.style.display = "none");
+    }
+
+    //sales
+    if (isSales) {
+      cardSales.forEach(card => card.style.display = "block");
+
+    } else { 
+      cardSales.forEach(card => card.style.display = "none");
+    }
+
+    //sucres
+    if (isSucres) {
+      cardSucres.forEach(card => card.style.display = "block");
+
+    } else { 
+      cardSucres.forEach(card => card.style.display = "block");
+    }
 
   }
 }
 
+
+
+// function toggleDisplayCategory(selector) {
+//   const cards = document.querySelectorAll(selector);
+
+//   cards.forEach(card => {
+//     card.style.display = (card.style.display === "none") ? "block" : "none";
+//   });
+// }
+
+function hideAllProduct(){
+  const allCards = document.querySelectorAll('.card')
+
+    allCards.forEach(card => {
+      card.style.display === "none";
+  });
+
+}
+
+
+
+
 // ---------- INITIALISATION ----------
-categorySelection();
+
 chargerCards(selections);
 chargerCartCards();
+categorySelection();
