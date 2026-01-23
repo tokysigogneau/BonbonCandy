@@ -163,71 +163,41 @@ function emptyCart() {
 // Function to display the choosen category only from checkboxes
 
 function categorySelection() {
+  //this array group all informations needed for each category : 
+  // the checkbox reference + the classname --> we need them to show/hide selected category
+  const categories = [
+    { checkbox: "categorie_boissons", class: ".card_boissons" },
+    { checkbox: "categorie_bonbons",  class: ".card_bonbons" },
+    { checkbox: "categorie_sales",    class: ".card_sales" },
+    { checkbox: "categorie_sucres",   class: ".card_sucres" }
+  ];
 
-  //these are the category choices
-  const checkboxBoissons = document.getElementById('categorie_boissons');
-  const checkboxBonbons = document.getElementById('categorie_bonbons');
-  const checkboxSales   = document.getElementById('categorie_sales');
-  const checkboxSucres  = document.getElementById('categorie_sucres');
+  // Select  categories that are checked and create a new array with filter() that contains them
+  const active = categories.filter(cat =>
+    document.getElementById(cat.checkbox).checked
+  );
 
-  //select each class element to hide/show them
-  const cardBoissons = document.querySelectorAll('.card_boissons');
-  const cardBonbons = document.querySelectorAll('.card_bonbons');
-  const cardSales = document.querySelectorAll('.card_sales');
-  const cardSucres = document.querySelectorAll('.card_sucres');
-
-  const isBoissons = checkboxBoissons?.checked;
-  const isBonbons = checkboxBonbons?.checked;
-  const isSales   = checkboxSales?.checked;
-  const isSucres  = checkboxSucres?.checked;
-
-  if (isBoissons || isBonbons || isSales || isSucres) {
-    hideAllProduct()
-
-    //check each category if they are checked or not
-
-    //boissons
-    if (isBoissons) {
-    cardBoissons.forEach(card => card.style.display = "block");
-
-
-    } else { 
-    cardBoissons.forEach(card => card.style.display = "none");
-
-    }
-
-    //bonbons
-    if (isBonbons) {
-      cardBonbons.forEach(card => card.style.display = "block");
-
-
-    } else { 
-      cardBonbons.forEach(card => card.style.display = "none");
-    }
-
-    //sales
-    if (isSales) {
-      cardSales.forEach(card => card.style.display = "block");
-
-    } else { 
-      cardSales.forEach(card => card.style.display = "none");
-    }
-
-    //sucres
-    if (isSucres) {
-      cardSucres.forEach(card => card.style.display = "block");
-
-    } else { 
-      cardSucres.forEach(card => card.style.display = "none");
-    }
-
+  // Show all products if no category are selected
+  if (active.length === 0) {
+    showAllProduct();
+    return; //stop the function here 
   }
-  else { //if no category are selected, we display everything
-    showAllProduct()
 
-  }
+  //if at least 1 category is selected then we hide everything then show only the one checked 
+  hideAllProduct();
+
+  // Show only the selected categories
+  active.forEach(cat => {
+    document.querySelectorAll(cat.class).forEach(card => {
+      card.style.display = "block";
+    });
+  });
 }
 
+
+
+//these 2 functions are the same : they select all elements with class "card" and the change the display
+//display block to show / display none to hide
 
 function showAllProduct(){
   const allCards = document.querySelectorAll('.card')
@@ -243,9 +213,7 @@ function hideAllProduct(){
     allCards.forEach(card => {
       card.style.display = "none";
   });
-
 }
-
 
 
 
